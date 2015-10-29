@@ -9,6 +9,11 @@ This library is written to play well with existing Bourbon and Neat sites, but d
 ## Installation
 
 The preferred installation of this is to use Bower or NPM to install this package.
+
+```sh
+bower install yoga-sass
+```
+
 From there, add the `assets` directory in your SASS import paths.
 Finally, just `@import "yoga";` in your SCSS or SASS file.
 
