@@ -17,6 +17,10 @@ bower install yoga-sass
 From there, add the `assets` directory in your SASS import paths.
 Finally, just `@import "yoga";` in your SCSS or SASS file.
 
+## Mixin Docs
+
+This project is documented using SASSdoc and the full documentation can be seen on GH Pages: http://rtablada.github.io/yoga-sass
+
 ## [License](LICENSE.md)
 
 ## [Contributing](CONTRIBUTING.md)

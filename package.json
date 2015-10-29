@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-docs": "rm -rf sassdoc && sassdoc assets && git checkout -b tmp-gh-page && git add sassdoc && git commit -m 'Update Docs' && git subtree push --prefix sassdoc origin gh-pages && git checkout - && git branch -D tmp-gh-page && rm -rf sassdoc"
+    "publish-docs": "sassdocify && cd .pages && git push -f origin gh-pages && cd -"
   },
   "repository": {
     "type": "git",
