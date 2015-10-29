@@ -15,8 +15,8 @@
   $percent_wide: $num_col / $grid_width * 100;
 
   flex: 0;
-  margin-left: $gutter_width;
-  margin-right: $gutter_width;
+  margin-left: $gutter_size;
+  margin-right: $gutter_size;
 
   flex-basis: calc(#{$percent_wide}% - #{$gutter_size * 2});
 }
