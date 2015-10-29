@@ -1,0 +1,27 @@
+{
+  "name": "yoga-sass",
+  "version": "0.1.1",
+  "description": "A modern set of mixins and variables for SASS to use the power of flexbox.",
+  "main": "assets/_yoga.scss",
+  "keywords": [
+    "SASS",
+    "grid",
+    "columns",
+    "layout",
+    "flex"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish-docs": "rm -rf sassdoc && sassdoc assets && git checkout -b tmp-gh-page && git add sassdoc && git commit -m 'Update Docs' && git subtree push --prefix sassdoc origin gh-pages && git checkout - && git branch -D tmp-gh-page && rm -rf sassdoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtablada/yoga-sass.git"
+  },
+  "author": "Ryan Tablada <ryan.tablada@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rtablada/yoga-sass/issues"
+  },
+  "homepage": "https://github.com/rtablada/yoga-sass#readme"
+}

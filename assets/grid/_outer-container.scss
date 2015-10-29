@@ -1,4 +1,4 @@
-/// Makes an flex container element by, setting display:flex, setting up flex-wrap, clearing floats, setting its `max-width`, and uses margin: auto to center.
+/// Makes a flex container element setting `display:flex`, setting up `flex-wrap: wrap`, clearing floats, setting its `max-width`, and uses margin: auto to center.
 ///
 /// @param {Number [unit]} $local-max-width [$max-width]
 ///   Max width to be applied to the element. Can be a percentage or a measure.
