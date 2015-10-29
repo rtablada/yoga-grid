@@ -1,0 +1,22 @@
+/// Makes a flex item for evenly spaced grid items.
+/// Must be direct child of a Flex Container (recommened to use yoga-container or yoga-outer-container)
+///
+/// @example scss - Usage
+///   .element {
+///     @include yoga-even-column;
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     flex: 1;
+///   }
+
+@mixin yoga-column($num_col: 1, $grid_width: $grid-columns, $gutter_size: $gutter) {
+  $percent_wide: $num_col / $grid_width * 100;
+
+  flex: 0;
+  margin-left: $gutter_width;
+  margin-right: $gutter_width;
+
+  flex-basis: calc(#{$percent_wide}% - #{$gutter_size * 2});
+}
