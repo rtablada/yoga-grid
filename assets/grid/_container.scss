@@ -1,7 +1,5 @@
-/// Makes an flex container element by, setting display:flex, setting up flex-wrap, clearing floats, setting its `max-width`, and uses margin: auto to center.
+/// Makes an flex container element by, setting display:flex, setting up flex-wrap, clearing floats.
 ///
-/// @param {Number [unit]} $local-max-width [$max-width]
-///   Max width to be applied to the element. Can be a percentage or a measure.
 /// @param {String} $align_vert [stretch]
 ///   How to align child elements across main axis
 ///
@@ -15,9 +13,6 @@
 ///     display: flex;
 ///     flex-wrap: wrap;
 ///     align-items: stretch;
-///     max-width: 1040px;
-///     margin-left: auto;
-///     margin-right: auto;
 ///     *zoom: 1;
 ///   }
 ///
@@ -30,14 +25,10 @@
 ///     clear: both;
 ///   }
 
-@mixin yoga-container($local-max-width: $max-width, $align_vert: stretch) {
+@mixin yoga-container($align_vert: stretch) {
   display: flex;
   flex-wrap: wrap;
   align-items: $align_vert;
-
-  max-width: $local-max-width;
-  margin-left: auto;
-  margin-right: auto;
 
   *zoom: 1;
 
