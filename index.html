@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Yoga-sass - v0.1.1</title><link rel="stylesheet" href="assets/css/main.css"><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Yoga-sass - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>A modern set of mixins and variables for SASS to use the power of flexbox.</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/rtablada/yoga-sass#readme">Yoga-sass - v0.1.1</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="gutter" data-type="variable"><a href="#variable-gutter">gutter</a></li><li class="sidebar__item sassdoc__item" data-name="grid-columns" data-type="variable"><a href="#variable-grid-columns">grid-columns</a></li><li class="sidebar__item sassdoc__item" data-name="max-width" data-type="variable"><a href="#variable-max-width">max-width</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="yoga-column" data-type="mixin"><a href="#mixin-yoga-column">yoga-column</a></li><li class="sidebar__item sassdoc__item" data-name="yoga-container" data-type="mixin"><a href="#mixin-yoga-container">yoga-container</a></li><li class="sidebar__item sassdoc__item" data-name="yoga-even-column" data-type="mixin"><a href="#mixin-yoga-even-column">yoga-even-column</a></li><li class="sidebar__item sassdoc__item" data-name="yoga-outer-container" data-type="mixin"><a href="#mixin-yoga-outer-container">yoga-outer-container</a></li><li class="sidebar__item sassdoc__item" data-name="yoga-prototype" data-type="mixin"><a href="#mixin-yoga-prototype">yoga-prototype</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="variable-gutter"><h3 class="item__heading"><a class="item__name" href="#variable-gutter">gutter</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$gutter: 2rem !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sets the relative width of a single grid gutter to wrap all yoga-column imports. Set with the <code>!global</code> flag.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number (unit)</code></p></section><section class="main__item container item" id="variable-grid-columns"><h3 class="item__heading"><a class="item__name" href="#variable-grid-columns">grid-columns</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$grid-columns: 12 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sets the total number of columns in the grid. Its value can be overridden inside a media query using the <code>media()</code> mixin. Set with the <code>!global</code> flag.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number (unitless)</code></p></section><section class="main__item container item" id="variable-max-width"><h3 class="item__heading"><a class="item__name" href="#variable-max-width">max-width</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$max-width: 1040px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sets the max-width property of the element that includes <code>outer-container()</code>. Set with the <code>!global</code> flag.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number (unit)</code></p></section></section><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-yoga-column"><h3 class="item__heading"><a class="item__name" href="#mixin-yoga-column">yoga-column</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin yoga-column($num_col: 1, $grid_width: $grid-columns, $gutter_size: $gutter) { 
+  $percent_wide: $num_col / $grid_width * 100;
+
+  flex: 0;
+  margin-left: $gutter_size;
+  margin-right: $gutter_size;
+
+  flex-basis: calc(#{$percent_wide}% - #{$gutter_size * 2});
+ }" data-collapsed="@mixin yoga-column($num_col: 1, $grid_width: $grid-columns, $gutter_size: $gutter) { ... }"><code>@mixin yoga-column($num_col: 1, $grid_width: $grid-columns, $gutter_size: $gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Makes a flex item for evenly spaced grid items. Must be direct child of a Flex Container (recommened to use yoga-container or yoga-outer-container)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$num_col</code></th><td data-label="desc"><p>Number of columns wide to span.</p></td><td data-label="type"><code>Number [unitless]</code></td><td data-label="default"><code>1</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$grid_width</code></th><td data-label="desc"><p>Number of columns per row.</p></td><td data-label="type"><code>Number [unitless]</code></td><td data-label="default"><code>$grid-columns</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter_size</code></th><td data-label="desc"><p>Gutter for margin left and right around item.</p></td><td data-label="type"><code>Number [unit]</code></td><td data-label="default"><code>$gutter</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Usage</p></div><pre class="example__code language-scss"><code>.element {
+  @include yoga-column(6, 12, 10px);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>CSS Output</p></div><pre class="example__code language-css"><code>.element {
+  flex: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  flex-basis: calc(50% - 20px);
+}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-prototype"><code>yoga-prototype</code></a></li></ul></section><section class="main__item container item" id="mixin-yoga-container"><h3 class="item__heading"><a class="item__name" href="#mixin-yoga-container">yoga-container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin yoga-container($align_vert: stretch) { 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: $align_vert;
+
+  *zoom: 1;
+
+  &amp;:before, &amp;:after {
+    content: &quot; &quot;;
+    display: table;
+  }
+
+  &amp;:after {
+    clear: both;
+  }
+ }" data-collapsed="@mixin yoga-container($align_vert: stretch) { ... }"><code>@mixin yoga-container($align_vert: stretch) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Makes a flex container element setting <code>display:flex</code>, setting up <code>flex-wrap: wrap</code>, and clears floats.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$align_vert</code></th><td data-label="desc"><p>How to align child elements across main axis</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>stretch</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Usage</p></div><pre class="example__code language-scss"><code>.element {
+  @include yoga-container(1040px);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>CSS Output</p></div><pre class="example__code language-css"><code>.element {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  *zoom: 1;
+}
+
+.element:before, .element:after {
+  content: &quot; &quot;;
+  display: table;
+}
+
+.element:after {
+  clear: both;
+}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-outer-container"><code>yoga-outer-container</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-prototype"><code>yoga-prototype</code></a></li></ul></section><section class="main__item container item" id="mixin-yoga-even-column"><h3 class="item__heading"><a class="item__name" href="#mixin-yoga-even-column">yoga-even-column</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin yoga-even-column() { 
+  flex: 1;
+ }" data-collapsed="@mixin yoga-even-column() { ... }"><code>@mixin yoga-even-column() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Makes a flex item for evenly spaced grid items. Must be direct child of a Flex Container (recommened to use yoga-container or yoga-outer-container)</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Usage</p></div><pre class="example__code language-scss"><code>.element {
+  @include yoga-even-column;
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>CSS Output</p></div><pre class="example__code language-css"><code>.element {
+  flex: 1;
+}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-prototype"><code>yoga-prototype</code></a></li></ul></section><section class="main__item container item" id="mixin-yoga-outer-container"><h3 class="item__heading"><a class="item__name" href="#mixin-yoga-outer-container">yoga-outer-container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin yoga-outer-container($local-max-width: $max-width, $align_vert: stretch) { 
+  @include yoga-container($align_vert);
+
+  max-width: $local-max-width;
+  margin-left: auto;
+  margin-right: auto;
+ }" data-collapsed="@mixin yoga-outer-container($local-max-width: $max-width, $align_vert: stretch) { ... }"><code>@mixin yoga-outer-container($local-max-width: $max-width, $align_vert: stretch) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Makes a flex container element setting <code>display:flex</code>, setting up <code>flex-wrap: wrap</code>, clearing floats, setting its <code>max-width</code>, and uses margin: auto to center.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$local-max-width</code></th><td data-label="desc"><p>Max width to be applied to the element. Can be a percentage or a measure.</p></td><td data-label="type"><code>Number [unit]</code></td><td data-label="default"><code>$max-width</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$align_vert</code></th><td data-label="desc"><p>How to align child elements across main axis</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>stretch</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Usage</p></div><pre class="example__code language-scss"><code>.element {
+  @include yoga-outer-container(1040px);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>CSS Output</p></div><pre class="example__code language-css"><code>.element {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  *zoom: 1;
+}
+
+.element:before, .element:after {
+  content: &quot; &quot;;
+  display: table;
+}
+
+.element:after {
+  clear: both;
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-container"><code>yoga-container</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-prototype"><code>yoga-prototype</code></a></li></ul></section><section class="main__item container item" id="mixin-yoga-prototype"><h3 class="item__heading"><a class="item__name" href="#mixin-yoga-prototype">yoga-prototype</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin yoga-prototype() { 
+  .#{$prefix}-container {
+    @include yoga-outer-container($local_max_width, $align_vert);
+  }
+
+  .#{$prefix}-row {
+    @include yoga-container($align_vert);
+  }
+
+  .#{$prefix}-even {
+    @include yoga-even-column;
+  }
+
+  @for $i from 1 through $grid_width {
+    .#{$prefix}-col-#{$i} {
+      @include yoga-column($i, $grid_width, $gutter_size);
+    }
+  }
+ }" data-collapsed="@mixin yoga-prototype() { ... }"><code>@mixin yoga-prototype() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>.yg-col-6 { flex: 0; margin-left: 10px; margin-right: 10px; flex-basis: calc(100% - 20px); }</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-outer-container"><code>yoga-outer-container</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-container"><code>yoga-container</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-even-column"><code>yoga-even-column</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-yoga-column"><code>yoga-column</code></a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><a class="project-info__name" href="https://github.com/rtablada/yoga-sass#readme">Yoga-sass</a><!-- Version --> <span class="project-info__version">- v0.1.1</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
