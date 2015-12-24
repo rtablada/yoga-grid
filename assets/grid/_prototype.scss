@@ -1,0 +1,119 @@
+/// Makes a basic grid for quick prototyping.
+///
+/// @param {Number [unitless]} $grid_width [$grid-columns]
+///   Number of columns in grid.
+/// @param {Number [unitless]} $gutter_size [$gutter]
+///   Gutter for margin left and right around item.
+/// @param {Number [unit]} $local_max_width [$max-width]
+///   Max width to be applied to the element. Can be a percentage or a measure.
+/// @param {String} $align_vert [stretch]
+///   How to align child elements across main axis
+/// @param {String} $prefix [yg]
+///   Prefix for prototyping classes
+///
+/// @example scss - Usage
+///   @include yoga-prototype(6, 10px, 960px, stretch);
+///
+/// @example css - CSS Output
+///   .yg-container {
+///     display: flex;
+///     flex-wrap: wrap;
+///     align-items: stretch;
+///     *zoom: 1;
+///     max-width: 960px;
+///     margin-left: auto;
+///     margin-right: auto;
+///   }
+
+///   .yg-container:before, .yg-container:after {
+///     content: " ";
+///     display: table;
+///   }
+
+///   .yg-container:after {
+///     clear: both;
+///   }
+
+///   .yg-row {
+///     display: flex;
+///     flex-wrap: wrap;
+///     align-items: stretch;
+///     *zoom: 1;
+///   }
+
+///   .yg-row:before, .yg-row:after {
+///     content: " ";
+///     display: table;
+///   }
+
+///   .yg-row:after {
+///     clear: both;
+///   }
+
+///   .yg-even {
+///     flex: 1;
+///   }
+
+///   .yg-col-1 {
+///     flex: 0;
+///     margin-left: 10px;
+///     margin-right: 10px;
+///     flex-basis: calc(16.66667% - 20px);
+///   }
+
+///   .yg-col-2 {
+///     flex: 0;
+///     margin-left: 10px;
+///     margin-right: 10px;
+///     flex-basis: calc(33.33333% - 20px);
+///   }
+
+///   .yg-col-3 {
+///     flex: 0;
+///     margin-left: 10px;
+///     margin-right: 10px;
+///     flex-basis: calc(50% - 20px);
+///   }
+
+///   .yg-col-4 {
+///     flex: 0;
+///     margin-left: 10px;
+///     margin-right: 10px;
+///     flex-basis: calc(66.66667% - 20px);
+///   }
+
+///   .yg-col-5 {
+///     flex: 0;
+///     margin-left: 10px;
+///     margin-right: 10px;
+///     flex-basis: calc(83.33333% - 20px);
+///   }
+
+///   .yg-col-6 {
+///     flex: 0;
+///     margin-left: 10px;
+///     margin-right: 10px;
+///     flex-basis: calc(100% - 20px);
+///   }
+
+@mixin yoga-prototype(
+  $grid_width: $grid-columns, $gutter_size: $gutter,
+  $local_max_width: $max-width, $align_vert: stretch, $prefix: yg) {
+  .#{$prefix}-container {
+    @include yoga-outer-container($local_max_width, $align_vert);
+  }
+
+  .#{$prefix}-row {
+    @include yoga-container($align_vert);
+  }
+
+  .#{$prefix}-even {
+    @include yoga-even-column;
+  }
+
+  @for $i from 1 through $grid_width {
+    .#{$prefix}-col-#{$i} {
+      @include yoga-column($i, $grid_width, $gutter_size);
+    }
+  }
+}
