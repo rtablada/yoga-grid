@@ -1,6 +1,6 @@
 {
   "name": "yoga-sass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modern set of mixins and variables for SASS to use the power of flexbox.",
   "main": "assets/_yoga.scss",
   "keywords": [
