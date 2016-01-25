@@ -26,6 +26,7 @@
 ///   }
 
 @mixin yoga-container($align_vert: stretch) {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: $align_vert;
